@@ -1,12 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home/Home';
-import User from '../pages/user/User';
+import Movies from '../pages/movies/movies';
 
 const Router = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Home />} />
-			<Route path='/user/:id' element={<User />} />
+			<Route path='/movies' element={<Movies />} />
+			{/* <Route path='/cinemaMovies/:id' /> */}
 		</Routes>
 	);
 };
