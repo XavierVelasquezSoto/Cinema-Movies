@@ -14,7 +14,7 @@ const Home = () => {
 		<>
 			<Menu />
 			<h1>Películas de estreno</h1>
-			{movieList !== 0 &&
+			{movieList &&
 				movieList.map(movie => {
 					return (
 						<div key={movie._id}>
@@ -27,25 +27,25 @@ const Home = () => {
 };
 
 const getMovieById = async (id, setMovieList) => {
-	const response = await fetch(`http://localhost:3000/`);
+	const response = await fetch(`http://localhost:3000/${id}`);
 	const movieList = await response.json();
 	setMovieList(movieList);
 };
 
-const updateMovie = async (event, id, movieList, setMovieList) => {
-	const newMovieInfo = {
-		title: event.target.title.value || movieList.title,
-		synopsis: event.target.synopsis.value || movieList.synopsis
-	};
-	const response = await fetch(`http://localhost:3000/${id}`, {
-		method: 'PATCH',
-		body: JSON.stringify(newMovieInfo),
-		headers: {
-			'content-type': 'application/json'
-		}
-	});
-	const movieUpdate = await response.json();
-	setMovieList(movieUpdate);
-};
+// const updateMovie = async (event, id, movieList, setMovieList) => {
+// 	const newMovieInfo = {
+// 		title: event.target.title.value || movieList.title,
+// 		synopsis: event.target.synopsis.value || movieList.synopsis
+// 	};
+// 	const response = await fetch(`http://localhost:3000/${id}`, {
+// 		method: 'PATCH',
+// 		body: JSON.stringify(newMovieInfo),
+// 		headers: {
+// 			'content-type': 'application/json'
+// 		}
+// 	});
+// 	const movieUpdate = await response.json();
+// 	setMovieList(movieUpdate);
+// };
 
 export default Home;
