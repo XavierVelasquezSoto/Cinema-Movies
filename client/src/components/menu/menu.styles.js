@@ -9,6 +9,7 @@ const StyledResponsive = styled.nav`
 `;
 
 const StyledHeader = styled.div`
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -25,7 +26,7 @@ const StyledMenuImg = styled.img`
 `;
 
 const StyledPositionLinks = styled.ul`
-	position: absolute;
+	position: relative;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
