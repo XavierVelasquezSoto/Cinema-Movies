@@ -5,8 +5,8 @@ import Movies from '../pages/movies/movies';
 const Router = () => {
 	return (
 		<Routes>
-			<Route path='/' element={<Home />} />
-			<Route path='/movies' element={<Movies />} />
+			<Route index path='/' element={<Home />} />
+			<Route path='/movies:id' element={<Movies />} />
 			{/* <Route path='/cinemaMovies/:id' /> */}
 		</Routes>
 	);

@@ -1,10 +1,9 @@
-import Users from '../../components/users/Users';
+import Menu from '../../components/menu/Menu';
 
 const Home = () => {
 	return (
 		<>
-			<h1>HOME</h1>
-			<Users />
+			<Menu />
 		</>
 	);
 };
