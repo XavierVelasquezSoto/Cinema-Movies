@@ -1,6 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+const StyledResponsive = styled.nav`
+	border-bottom: 2px solid rgb(250, 250, 250, 0.2);
+	@media screen and (width>768px) {
+		display: none;
+	}
+`;
+
 const StyledHeader = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -13,11 +20,12 @@ const StyledHome = styled(NavLink)`
 `;
 
 const StyledMenuImg = styled.img`
+	filter: grayscale(100%) invert(100%);
 	height: 30px;
 `;
 
 const StyledPositionLinks = styled.ul`
-	position: relative;
+	position: absolute;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -28,4 +36,10 @@ const StyledPositionLinks = styled.ul`
 	background-color: black;
 `;
 
-export { StyledHeader, StyledHome, StyledMenuImg, StyledPositionLinks };
+export {
+	StyledResponsive,
+	StyledHeader,
+	StyledHome,
+	StyledMenuImg,
+	StyledPositionLinks
+};

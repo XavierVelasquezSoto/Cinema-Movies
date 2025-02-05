@@ -1,44 +1,52 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
 	StyledHeader,
 	StyledHome,
 	StyledMenuImg,
-	StyledPositionLinks
+	StyledPositionLinks,
+	StyledResponsive
 } from './menu.styles';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
 	const [menuActive, setMenuActive] = useState(false);
+	const toggleMenu = () => setMenuActive(!menuActive);
 	return (
 		<>
-			<nav>
+			<StyledResponsive>
 				<StyledHeader>
-					<StyledHome to='/' onClick={() => setMenuActive(menuActive)}>
-						CINEMA
-					</StyledHome>
-					{menuActive && (
+					<StyledHome to='/'>CINEMA</StyledHome>
+					{!menuActive && (
 						<StyledMenuImg
 							src='/assets/menu-img/open-menu.svg'
 							alt='error open menu'
-							onClick={() => setMenuActive(!menuActive)}
+							// $isOpen={!menuActive}
+							onClick={toggleMenu}
 						/>
 					)}
-					{!menuActive && (
+					{menuActive && (
 						<StyledMenuImg
 							src='/assets/menu-img/close-menu.svg'
 							alt='error close menu'
-							onClick={() => setMenuActive(!menuActive)}
+							// $isOpen={!menuActive}
+							onClick={toggleMenu}
 						/>
 					)}
 				</StyledHeader>
-				{!menuActive && (
+				{menuActive && (
 					<StyledPositionLinks>
-						<li>Películas</li>
-						<li>Contacto</li>
-						<li>Quiénes somos</li>
+						<Link to='/movies' onClick={toggleMenu}>
+							Películas
+						</Link>
+						<Link to='/contact' onClick={toggleMenu}>
+							Contacto
+						</Link>
+						<Link to='/about-us' onClick={toggleMenu}>
+							Quiénes somos
+						</Link>
 					</StyledPositionLinks>
 				)}
-			</nav>
+			</StyledResponsive>
 		</>
 	);
 };
