@@ -11,6 +11,17 @@ cinemaMoviesController.getAllCinemaMovies = async (req, res) => {
   }
 };
 
+cinemaMoviesController.getMovieById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const CinemaMovie = await CinemaMoviesModel.find(id);
+    return res.json(CinemaMovie);
+  } catch (error) {
+    return res.json({ error: "Error reading database" + error });
+  }
+};
+
 cinemaMoviesController.createCinemaMovies = async (req, res) => {
   const cinemaMoviesInfo = req.body;
   const newCinemaMovies = new CinemaMoviesModel({ ...cinemaMoviesInfo });

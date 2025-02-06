@@ -10,18 +10,19 @@ import { Link } from 'react-router-dom';
 
 const Menu = () => {
 	const [menuActive, setMenuActive] = useState(false);
-	const toggleMenu = () => setMenuActive(!menuActive);
 	return (
 		<>
 			<StyledResponsive>
 				<StyledHeader>
-					<StyledHome to='/'>CINEMA</StyledHome>
+					<StyledHome to='/' onClick={() => setMenuActive(false)}>
+						CINEMA
+					</StyledHome>
 					{!menuActive && (
 						<StyledMenuImg
 							src='/assets/menu-img/open-menu.svg'
 							alt='error open menu'
 							// $isOpen={!menuActive}
-							onClick={toggleMenu}
+							onClick={() => setMenuActive(true)}
 						/>
 					)}
 					{menuActive && (
@@ -29,19 +30,19 @@ const Menu = () => {
 							src='/assets/menu-img/close-menu.svg'
 							alt='error close menu'
 							// $isOpen={!menuActive}
-							onClick={toggleMenu}
+							onClick={() => setMenuActive(false)}
 						/>
 					)}
 				</StyledHeader>
 				{menuActive && (
 					<StyledPositionLinks>
-						<Link to='/movies' onClick={toggleMenu}>
+						<Link to='/movies' onClick={() => setMenuActive(false)}>
 							Películas
 						</Link>
-						<Link to='/contact' onClick={toggleMenu}>
+						<Link to='/contact' onClick={() => setMenuActive(false)}>
 							Contacto
 						</Link>
-						<Link to='/about-us' onClick={toggleMenu}>
+						<Link to='/about-us' onClick={() => setMenuActive(false)}>
 							Quiénes somos
 						</Link>
 					</StyledPositionLinks>

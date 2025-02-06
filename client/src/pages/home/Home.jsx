@@ -4,30 +4,33 @@ import { useParams } from 'react-router-dom';
 
 const Home = () => {
 	const [movieList, setMovieList] = useState();
-	const { id } = useParams();
+	console.log(movieList);
 
 	useEffect(() => {
-		getMovieById(id, setMovieList);
+		getMovieById('679a9a9d2c398c9e36ce39e2', setMovieList);
 	}, []);
 
 	return (
 		<>
 			<Menu />
 			<h1>Películas de estreno</h1>
-			{movieList &&
-				movieList.map(movie => {
-					return (
-						<div key={movie._id}>
-							<h2>{movie.title}</h2>
-						</div>
-					);
-				})}
+			{movieList && (
+				<div key={movieList._id}>
+					<h2>{movieList.title}</h2>
+				</div>
+			)}
 		</>
 	);
 };
 
+const getAllMovies = async setMovieList => {
+	const response = await fetch(`http://localhost:3000/api/cinemaMovies`);
+	const movieList = await response.json();
+	setMovieList(movieList);
+};
+
 const getMovieById = async (id, setMovieList) => {
-	const response = await fetch(`http://localhost:3000/${id}`);
+	const response = await fetch(`http://localhost:3000/api/cinemaMovies/${id}`);
 	const movieList = await response.json();
 	setMovieList(movieList);
 };
