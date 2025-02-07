@@ -1,9 +1,9 @@
-import Menu from '../../components/menu/Menu';
+import Header from '../../components/header/Header';
 
 const AboutUs = () => {
 	return (
 		<>
-			<Menu />
+			<Header />
 			<h1>About Us</h1>
 		</>
 	);

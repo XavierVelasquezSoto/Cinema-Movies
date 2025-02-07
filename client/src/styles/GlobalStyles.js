@@ -25,9 +25,12 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        font-family: sans-serif;
+        font-family: "Ubuntu", serif;
         margin: 0;
-        background-color: #070724;
+        /* background-color: #070724; */
+        background:linear-gradient(to bottom, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 55%, rgba(0, 132, 255, 0.93) 100%);
+        min-height:100vh;
+
         color: aliceblue;
     }
 

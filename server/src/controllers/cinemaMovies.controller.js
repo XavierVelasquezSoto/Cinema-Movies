@@ -15,7 +15,7 @@ cinemaMoviesController.getMovieById = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const CinemaMovie = await CinemaMoviesModel.find(id);
+    const CinemaMovie = await CinemaMoviesModel.findById(id);
     return res.json(CinemaMovie);
   } catch (error) {
     return res.json({ error: "Error reading database" + error });

@@ -1,24 +1,40 @@
 import { useEffect, useState } from 'react';
-import Menu from '../../components/menu/Menu';
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Header from '../../components/header/Header';
+import {
+	StyledContainerMovie,
+	StyledImgMovie,
+	StyledMoviesGrid,
+	StyledPremiere,
+	StyledTitleMovie
+} from './home.styles';
 
 const Home = () => {
 	const [movieList, setMovieList] = useState();
-	console.log(movieList);
 
 	useEffect(() => {
-		getMovieById('679a9a9d2c398c9e36ce39e2', setMovieList);
+		getAllMovies(setMovieList);
 	}, []);
 
 	return (
 		<>
-			<Menu />
-			<h1>Películas de estreno</h1>
-			{movieList && (
-				<div key={movieList._id}>
-					<h2>{movieList.title}</h2>
-				</div>
-			)}
+			<Header />
+			<StyledPremiere>Películas de estreno</StyledPremiere>
+			<StyledMoviesGrid>
+				{movieList &&
+					movieList.map(movie => {
+						return (
+							<StyledContainerMovie key={movie._id}>
+								<Link to={`/movie/${movie._id}`}>
+									<StyledImgMovie src={movie.images} alt='error interstellar' />
+								</Link>
+								<Link to={`/movie/${movie._id}`}>
+									<StyledTitleMovie>{movie.title}</StyledTitleMovie>
+								</Link>
+							</StyledContainerMovie>
+						);
+					})}
+			</StyledMoviesGrid>
 		</>
 	);
 };
@@ -28,13 +44,6 @@ const getAllMovies = async setMovieList => {
 	const movieList = await response.json();
 	setMovieList(movieList);
 };
-
-const getMovieById = async (id, setMovieList) => {
-	const response = await fetch(`http://localhost:3000/api/cinemaMovies/${id}`);
-	const movieList = await response.json();
-	setMovieList(movieList);
-};
-
 // const updateMovie = async (event, id, movieList, setMovieList) => {
 // 	const newMovieInfo = {
 // 		title: event.target.title.value || movieList.title,

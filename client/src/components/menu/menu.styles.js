@@ -26,7 +26,7 @@ const StyledMenuImg = styled.img`
 `;
 
 const StyledPositionLinks = styled.ul`
-	position: relative;
+	position: absolute;
 	text-align: center;
 	display: flex;
 	flex-direction: column;

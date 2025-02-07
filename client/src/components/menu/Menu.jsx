@@ -21,7 +21,6 @@ const Menu = () => {
 						<StyledMenuImg
 							src='/assets/menu-img/open-menu.svg'
 							alt='error open menu'
-							// $isOpen={!menuActive}
 							onClick={() => setMenuActive(true)}
 						/>
 					)}
@@ -29,16 +28,12 @@ const Menu = () => {
 						<StyledMenuImg
 							src='/assets/menu-img/close-menu.svg'
 							alt='error close menu'
-							// $isOpen={!menuActive}
 							onClick={() => setMenuActive(false)}
 						/>
 					)}
 				</StyledHeader>
 				{menuActive && (
 					<StyledPositionLinks>
-						<Link to='/movies' onClick={() => setMenuActive(false)}>
-							Películas
-						</Link>
 						<Link to='/contact' onClick={() => setMenuActive(false)}>
 							Contacto
 						</Link>
