@@ -33,5 +33,11 @@ export const GlobalStyles = createGlobalStyle`
 
         color: aliceblue;
     }
+    h1,h2,h3{
+        font-weight: 700;
+    }
+    p{
+        font-weight: 300;
+    }
 
 `;

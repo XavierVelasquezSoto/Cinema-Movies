@@ -9,10 +9,11 @@ const CinemaMoviesScheme = mongoose.Schema(
     director: String,
     genre: String,
     mpaa: String,
-    hours: [String],
+    hours: [[String]],
     date: [String],
     images: String,
-    releaseDate: String
+    releaseDate: String,
+    hall: [String]
   },
   {
     collection: "cinema"
