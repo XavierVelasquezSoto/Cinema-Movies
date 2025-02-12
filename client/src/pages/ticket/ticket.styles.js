@@ -9,6 +9,7 @@ const StyledContainer = styled.div`
 	@media screen and (width>768px) {
 		flex-direction: row;
 		width: 90%;
+		max-width: 1000px;
 		margin: auto;
 		padding-top: 200px;
 	}
@@ -18,6 +19,7 @@ const StyledDivKeyTicket = styled.div`
 	display: flex;
 	width: 90%;
 	margin-bottom: 30px;
+	align-items: center;
 
 	@media screen and (width>768px) {
 		justify-content: space-evenly;
@@ -28,6 +30,11 @@ const StyledDivKeyTicket = styled.div`
 const StyledImageTicket = styled.img`
 	width: 30%;
 	margin-right: 50px;
+	@media screen and (width>768px) {
+		width: 100%;
+		max-width: 250px;
+		height: auto;
+	}
 `;
 
 const StyledName = styled.span`
@@ -44,7 +51,7 @@ const StyledContainerTicket = styled.div`
 	padding-top: 35px;
 `;
 
-const StyledTextTicket = styled.h3`
+const StyledTextTicket = styled.p`
 	text-align: center;
 	@media screen and (width>768px) {
 		margin: 0;
@@ -60,6 +67,7 @@ const StyledBoxAdult = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 250px;
+	max-width: 250px;
 	min-height: auto;
 	background-color: inherit;
 	border-radius: 50px;
@@ -78,8 +86,8 @@ const StyledPrice = styled.p`
 const StyledBoxChild = styled.div`
 	display: flex;
 	align-items: center;
-	/* justify-content: space-evenly; */
 	width: 250px;
+	max-width: 250px;
 	min-height: auto;
 	background-color: inherit;
 	border-radius: 50px;

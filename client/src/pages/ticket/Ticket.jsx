@@ -84,12 +84,11 @@ const Ticket = () => {
 						</div>
 					</StyledDivKeyTicket>
 					<div>
-						<div>
-							<StyledTextTicket>Selecciona tus entradas:</StyledTextTicket>
-							<StyledMaxTextTicket>
-								Puedes comprar 10 entradas máximo por transacción.
-							</StyledMaxTextTicket>
-						</div>
+						<StyledTextTicket>Selecciona tus entradas:</StyledTextTicket>
+						<StyledMaxTextTicket>
+							Puedes comprar 10 entradas máximo por transacción.
+						</StyledMaxTextTicket>
+
 						<StyledContainerTicket>
 							<StyledBoxAdult>
 								<StyledYearRange>Adulto</StyledYearRange>
