@@ -20,6 +20,16 @@ import {
 } from './ticket.styles';
 
 const Ticket = () => {
+	const [ticket, setTicket] = useState();
+
+	const { id, date, hour } = useParams();
+
+	// console.log(useParams());
+
+	useEffect(() => {
+		getMovieById(id, setTicket);
+	}, []);
+
 	const [countAdult, setCountAdult] = useState(0);
 	const [countChild, setCountChild] = useState(0);
 
@@ -49,16 +59,6 @@ const Ticket = () => {
 
 	const totalPrice = countAdult * 9 + countChild * 7.5;
 	const initialPrice = totalPrice === 0 ? totalPrice : totalPrice.toFixed(1);
-
-	const [ticket, setTicket] = useState();
-
-	const { id, date, hour } = useParams();
-
-	// console.log(useParams());
-
-	useEffect(() => {
-		getMovieById(id, setTicket);
-	}, []);
 
 	return (
 		<>
