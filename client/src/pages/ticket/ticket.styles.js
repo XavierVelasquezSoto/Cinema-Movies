@@ -7,8 +7,10 @@ const StyledContainer = styled.div`
 	padding-top: 50px;
 
 	@media screen and (width>768px) {
-		display: flex;
-		justify-content: space-evenly;
+		flex-direction: row;
+		width: 90%;
+		margin: auto;
+		padding-top: 200px;
 	}
 `;
 
@@ -16,6 +18,11 @@ const StyledDivKeyTicket = styled.div`
 	display: flex;
 	width: 90%;
 	margin-bottom: 30px;
+
+	@media screen and (width>768px) {
+		justify-content: space-evenly;
+		margin-bottom: 0;
+	}
 `;
 
 const StyledImageTicket = styled.img`
@@ -37,8 +44,11 @@ const StyledContainerTicket = styled.div`
 	padding-top: 35px;
 `;
 
-const StyledTextTicket = styled.p`
+const StyledTextTicket = styled.h3`
 	text-align: center;
+	@media screen and (width>768px) {
+		margin: 0;
+	}
 `;
 
 const StyledMaxTextTicket = styled.p`
