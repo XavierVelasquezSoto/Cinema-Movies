@@ -84,7 +84,7 @@ const Movies = () => {
 							{movie.hours[date].map((hour, index) => (
 								<StyledHourSelect
 									key={index}
-									to={`/ticket/${movie._id}/${hour}/${movie.hall[index]}`}
+									to={`/ticket/${movie._id}/${movie.date[date]}/${hour}/${movie.hall[index]}`}
 								>
 									{hour}
 									<StyledHall>Sala:{movie.hall[index]}</StyledHall>

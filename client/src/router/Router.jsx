@@ -14,7 +14,7 @@ const Router = () => {
 			<Route path='/contact/' element={<Contact />} />
 			<Route path='/about-us/' element={<AboutUs />} />
 			{/* <Route path='/movie-info/' element={<MovieInfo />} /> */}
-			<Route path='/ticket/:id/:hour/:hall' element={<Ticket />} />
+			<Route path='/ticket/:id/:date/:hour/:hall' element={<Ticket />} />
 		</Routes>
 	);
 };

@@ -98,9 +98,8 @@ const StyledHourSelect = styled(NavLink)`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
 	border-bottom: 2px solid rgb(255, 255, 255, 0.3);
-	width: 100px;
+	width: 90%;
 	padding: 10px;
 `;
 

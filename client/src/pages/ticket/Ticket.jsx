@@ -1,10 +1,60 @@
 import { useEffect, useState } from 'react';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
+import {
+	StyledBoxAdult,
+	StyledBoxChild,
+	StyledButtonDecrement,
+	StyledButtonIncrement,
+	StyledContainer,
+	StyledContainerButton,
+	StyledContainerTicket,
+	StyledDivKeyTicket,
+	StyledImageTicket,
+	StyledMaxTextTicket,
+	StyledName,
+	StyledNumberSpan,
+	StyledPrice,
+	StyledTextTicket,
+	StyledYearRange
+} from './ticket.styles';
 
 const Ticket = () => {
+	const [countAdult, setCountAdult] = useState(0);
+	const [countChild, setCountChild] = useState(0);
+
+	const incrementAdult = () => {
+		if (countAdult + countChild < 10) {
+			setCountAdult(countAdult + 1);
+		}
+	};
+
+	const decrementAdult = () => {
+		if (countAdult > 0) {
+			setCountAdult(countAdult - 1);
+		}
+	};
+
+	const incrementChild = () => {
+		if (countAdult + countChild < 10) {
+			setCountChild(countChild + 1);
+		}
+	};
+
+	const decrementChild = () => {
+		if (countChild > 0) {
+			setCountChild(countChild - 1);
+		}
+	};
+
+	const totalPrice = countAdult * 9 + countChild * 7.5;
+	const initialPrice = totalPrice === 0 ? totalPrice : totalPrice.toFixed(1);
+
 	const [ticket, setTicket] = useState();
-	const { id, hour } = useParams();
+
+	const { id, date, hour } = useParams();
+
+	// console.log(useParams());
 
 	useEffect(() => {
 		getMovieById(id, setTicket);
@@ -14,13 +64,66 @@ const Ticket = () => {
 		<>
 			<Header />
 			{ticket && (
-				<>
-					<h1>SESIÓN {hour}</h1>
-
+				<StyledContainer>
+					<StyledDivKeyTicket key={ticket._id}>
+						<StyledImageTicket src={ticket.images} alt='' />
+						<div>
+							<p>
+								<StyledName>Película: </StyledName>
+								{ticket.title}
+							</p>
+							<p>
+								<StyledName>Función: </StyledName>
+								{hour}
+							</p>
+							<p>
+								<StyledName>Fecha: </StyledName>
+								{date}
+							</p>
+							<StyledName>Total: {initialPrice}€</StyledName>
+						</div>
+					</StyledDivKeyTicket>
 					<div>
-						<h1></h1>
+						<StyledTextTicket>Selecciona tus entradas:</StyledTextTicket>
+						<StyledMaxTextTicket>
+							Puedes comprar 10 entradas máximo por transacción.
+						</StyledMaxTextTicket>
+						<StyledContainerTicket>
+							<StyledBoxAdult>
+								<StyledYearRange>Adulto</StyledYearRange>
+								<StyledPrice>9€</StyledPrice>
+								<StyledContainerButton>
+									<StyledButtonDecrement onClick={decrementAdult}>
+										-
+									</StyledButtonDecrement>
+									<StyledNumberSpan>{countAdult}</StyledNumberSpan>
+									<StyledButtonIncrement
+										onClick={incrementAdult}
+										disabled={countAdult + countChild >= 10}
+									>
+										+
+									</StyledButtonIncrement>
+								</StyledContainerButton>
+							</StyledBoxAdult>
+							<StyledBoxChild>
+								<StyledYearRange>Menor</StyledYearRange>
+								<StyledPrice>7,5€</StyledPrice>
+								<StyledContainerButton>
+									<StyledButtonDecrement onClick={decrementChild}>
+										-
+									</StyledButtonDecrement>
+									<StyledNumberSpan>{countChild}</StyledNumberSpan>
+									<StyledButtonIncrement
+										onClick={incrementChild}
+										disabled={countAdult + countChild >= 10}
+									>
+										+
+									</StyledButtonIncrement>
+								</StyledContainerButton>
+							</StyledBoxChild>
+						</StyledContainerTicket>
 					</div>
-				</>
+				</StyledContainer>
 			)}
 		</>
 	);
