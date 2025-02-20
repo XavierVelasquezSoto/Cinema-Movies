@@ -128,7 +128,8 @@ const Ticket = () => {
 									movie: ticket.title,
 									image: ticket.images,
 									date: date,
-									hour: hour
+									hour: hour,
+									price: initialPrice
 								}}
 							>
 								<StyledButtonNext disabled={countAdult + countChild === 0}>

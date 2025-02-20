@@ -138,7 +138,6 @@ const StyledButtonNext = styled.button`
 	margin-top: 30px;
 	text-align: center;
 	font-size: 20px;
-	font-weight: 600;
 	border-radius: 80px;
 	border: none;
 	height: 50px;
