@@ -6,6 +6,7 @@ import {
 	StyledBoxChild,
 	StyledButtonDecrement,
 	StyledButtonIncrement,
+	StyledButtonNext,
 	StyledContainer,
 	StyledContainerButton,
 	StyledContainerTicket,
@@ -122,6 +123,7 @@ const Ticket = () => {
 									</StyledButtonIncrement>
 								</StyledContainerButton>
 							</StyledBoxChild>
+							<StyledButtonNext>Siguiente</StyledButtonNext>
 						</StyledContainerTicket>
 					</div>
 				</StyledContainer>

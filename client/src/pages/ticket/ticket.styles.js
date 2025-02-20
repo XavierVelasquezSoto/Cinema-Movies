@@ -5,6 +5,7 @@ const StyledContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	padding-top: 50px;
+	padding-bottom: 100px;
 
 	@media screen and (width>768px) {
 		flex-direction: row;
@@ -108,12 +109,14 @@ const StyledButtonDecrement = styled.button`
 	border: none;
 	background-color: inherit;
 	color: #fff;
+	cursor: pointer;
 `;
 
 const StyledButtonIncrement = styled.button`
 	border: none;
 	background-color: inherit;
 	color: #fff;
+	cursor: pointer;
 
 	&:disabled {
 		color: rgb(255, 255, 255, 0.5);
@@ -126,6 +129,23 @@ const StyledNumberSpan = styled.span`
 	width: 15px;
 	text-align: center;
 `;
+
+const StyledButtonNext = styled.button`
+	margin-top: 30px;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 80px;
+	border: none;
+	height: 50px;
+	width: 130px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgb(38, 110, 128, 0.5);
+		color: #fff;
+	}
+`;
+// const StyledImageNext = styled.img``;
 export {
 	StyledName,
 	StyledContainerTicket,
@@ -141,5 +161,6 @@ export {
 	StyledContainer,
 	StyledTextTicket,
 	StyledImageTicket,
-	StyledDivKeyTicket
+	StyledDivKeyTicket,
+	StyledButtonNext
 };
