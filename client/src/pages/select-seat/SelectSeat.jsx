@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import Header from '../../components/header/Header';
 
 const SelectSeat = () => {
-	const [seat, setSeat] = useState();
-
 	return (
 		<>
-			<p></p>
+			<Header />
+			<p>test</p>
 		</>
 	);
 };

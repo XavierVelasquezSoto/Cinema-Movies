@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
@@ -130,22 +131,41 @@ const StyledNumberSpan = styled.span`
 	text-align: center;
 `;
 
+// const StyledButtonNext = styled(Link)`
+
+// `;
 const StyledButtonNext = styled.button`
 	margin-top: 30px;
+	text-align: center;
 	font-size: 20px;
 	font-weight: 600;
 	border-radius: 80px;
 	border: none;
 	height: 50px;
-	width: 130px;
+	width: 180px;
+	margin: auto;
+	background-color: #fff;
+	color: black;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:hover {
 		background-color: rgb(38, 110, 128, 0.5);
 		color: #fff;
 	}
+
+	&:disabled {
+		background-color: transparent;
+		color: transparent;
+	}
+
+	&:disabled:hover {
+		background-color: transparent;
+		color: transparent;
+	}
 `;
-// const StyledImageNext = styled.img``;
 export {
 	StyledName,
 	StyledContainerTicket,

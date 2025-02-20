@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from '../../components/header/Header';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
 	StyledBoxAdult,
 	StyledBoxChild,
@@ -123,7 +123,20 @@ const Ticket = () => {
 									</StyledButtonIncrement>
 								</StyledContainerButton>
 							</StyledBoxChild>
-							<StyledButtonNext>Siguiente</StyledButtonNext>
+							<Link
+								to='/select-seat/'
+								state={{
+									totalTicket: countAdult + countChild,
+									movie: ticket.title,
+									image: ticket.image,
+									date: date,
+									hour: hour
+								}}
+							>
+								<StyledButtonNext disabled={countAdult + countChild === 0}>
+									Confirmación
+								</StyledButtonNext>
+							</Link>
 						</StyledContainerTicket>
 					</div>
 				</StyledContainer>
