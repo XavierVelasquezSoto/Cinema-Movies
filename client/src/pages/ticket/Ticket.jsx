@@ -25,8 +25,6 @@ const Ticket = () => {
 
 	const { id, date, hour } = useParams();
 
-	// console.log(useParams());
-
 	useEffect(() => {
 		getMovieById(id, setTicket);
 	}, []);
@@ -128,7 +126,7 @@ const Ticket = () => {
 								state={{
 									totalTicket: countAdult + countChild,
 									movie: ticket.title,
-									image: ticket.image,
+									image: ticket.images,
 									date: date,
 									hour: hour
 								}}

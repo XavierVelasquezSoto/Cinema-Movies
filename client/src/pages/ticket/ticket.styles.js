@@ -157,13 +157,14 @@ const StyledButtonNext = styled.button`
 	}
 
 	&:disabled {
-		background-color: transparent;
-		color: transparent;
+		background-color: #ccc;
+		color: #666;
+		cursor: not-allowed;
 	}
 
 	&:disabled:hover {
-		background-color: transparent;
-		color: transparent;
+		background-color: #ccc;
+		color: #666;
 	}
 `;
 export {
