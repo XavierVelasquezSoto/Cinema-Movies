@@ -13,7 +13,8 @@ const CinemaMoviesScheme = mongoose.Schema(
     date: [String],
     images: String,
     releaseDate: String,
-    hall: [String]
+    hall: [String],
+    tickets: [Object]
   },
   {
     collection: "cinema"
