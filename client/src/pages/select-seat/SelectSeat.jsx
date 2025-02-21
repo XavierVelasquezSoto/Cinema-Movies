@@ -51,6 +51,7 @@ const SelectSeat = () => {
 							/>
 						</button>
 					</div>
+					<button>comprar</button>
 				</div>
 			</StyledContainerSeat>
 		</>
